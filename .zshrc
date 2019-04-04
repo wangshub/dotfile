@@ -4,8 +4,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir virtualenv dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon virtualenv dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\uE0B4'
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\uE0B6'
@@ -13,10 +13,8 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="╭"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
 POWERLEVEL9K_STATUS_VERBOSE=false
 
-
-# vcs
 # VCS colors
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND='014'
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='015'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='120'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
@@ -27,12 +25,8 @@ POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
 POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
 
 source $ZSH/oh-my-zsh.sh
-# User configuration
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#alias loadnvm=". $(brew --prefix nvm)/nvm.sh"
 alias v="nvim"
 alias ls='ls -G'
 
@@ -40,6 +34,8 @@ plugins=(
 	git
 	zsh-autosuggestions
 	autojump
+	brew
+	python
 )
 
 # auto suggestions
@@ -68,8 +64,6 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
