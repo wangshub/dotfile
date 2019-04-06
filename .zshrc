@@ -28,9 +28,17 @@ source $ZSH/oh-my-zsh.sh
 
 # Example aliases
 alias v="nvim"
-alias ls='ls -G'
+#alias ls='ls -G'
+source $(dirname $(gem which colorls))/tab_complete.sh
+# https://github.com/athityakumar/colorls
+alias ls='colorls'
+alias ll='ls -la'
+alias la='ls -a'
+alias lt='ls --tree'
+alias hexo="./node_modules/hexo/bin/hexo"
 
 plugins=(
+	git-open
 	git
 	zsh-autosuggestions
 	autojump
@@ -67,3 +75,6 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+fortune
+
