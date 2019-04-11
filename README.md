@@ -4,7 +4,7 @@ My terminal looks like a garden. 🌹 🏘 🌱
 
 ## Screenshot
 
-<div style="text-align:center"><img src ="https://raw.githubusercontent.com/wangshub/image-hosting/master/img/20190409112201.png" width="90%" /></div>
+<div style="text-align:center"><img src ="https://raw.githubusercontent.com/wangshub/image-hosting/master/img/20190411090741.png" width="100%" /></div>
 
 
 ## Dependency
