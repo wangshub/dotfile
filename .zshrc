@@ -1,6 +1,7 @@
 export ZSH="/Users/kaboom/.oh-my-zsh"
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
@@ -81,3 +82,4 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 
 fortune
 
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
